@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter equipe{% endblock %}
+
+{% block body %}
+    <main class="create-team">
+    <h1>Création d'une nouvelle équipe</h1>
+<div class="test1">
+    {{ form_start(form) }}
+    </div>
+    <div class="test2">
+        {{ form_widget(form) }}
+        </div>
+        <button class="btn">{{ button_label|default('Save') }}</button>
+    {{ form_end(form) }}
+    </main>
+{% endblock %}
+
+

@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+{% block title %}Equipes{% endblock %}
+
+{% block body %}
+<div class="content-liste-équipes">
+<div class ="row justify-content-md-center">
+    <div class="col-6">
+        <h1>Les Equipes</h1>
+    </div>
+</div>
+
+<div class ="row justify-content-md-center">
+    <div class="col-6">
+        <table>
+            <thead>
+            <tr>
+            <th>
+                Libelle
+            </th>
+            <th>
+                Entraineur
+            </th>
+                {% if app.user %}
+                <th>
+                    <a href="{{ path('add_team')}}">Ajouter</a>
+                </th>
+                {% endif %}
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for p in equipes %}
+            <tr>
+                <td>{{ p.libelle }}</td>
+                <td>{{ p.entraineur }}</td>
+
+                <td>
+                    <a href="{{ path('show_team', {'libelle': p.libelle}) }}">Voir</a>
+                </td>
+                {% if app.user %}
+                    <td>
+                        <a href="{{ path('modify_team', {'libelle': p.libelle}) }}">Modify</a>
+                    </td>
+
+                {% endif %}
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
+{% endblock %}

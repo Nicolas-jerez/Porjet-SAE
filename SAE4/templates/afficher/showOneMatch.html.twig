@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block header %}
+<link rel="stylesheet" href="/../../css/StyleMatch.css">
+{% endblock %}
+
+{% block title %}Equipes{% endblock %}
+
+{% block body %}
+    <section class="mainMatch">
+        <header class="titleInfo">
+            <h2 id="date">Date : {{ match.getDateHeure|date('d/m') }}</h2>
+            <h2 id="referee">Arbitre : non renseigné</h2>
+            <h2 id="hour">Heure : {{ match.getDateHeure|date('H:i') }}</h2>
+        </header>
+        <section id="matchInfo">
+            <article class="teamInfoMatch">
+                <img src="../../img/{{ equipe.getUrlPhoto }}" class="logo">
+                <p class="teamNameMatch">{{ match.getEquipeLocale }}</p>
+            </article>
+            <article class="otherInfo">
+                <h2 id="typeMatch">Match amical</h2>
+                <h1 id="score">{{ match.getScore }}</h1>
+                <h2 id="etatMatch">Terminé</h2>
+                <h3 id="versus">VS</h3>
+            </article>
+            <article class="teamInfoMatch">
+                <img src="../../img/exterieur.png" class="logo">
+                <p class="teamNameMatch">{{ match.getEquipeAdverse }}</p>
+            </article>
+        </section>
+        <footer class="titleInfo">
+            <h2 id="category">Hôte : {{ match.getHote }}</h2>
+            <h2 id="place">Lieu : {{ match.getGymnase }}</h2>
+        </footer>
+
+    </section>
+{% endblock %}

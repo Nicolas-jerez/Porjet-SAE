@@ -1,0 +1,40 @@
+/* Feuille de style pour Gigondas  */
+
+body {
+	color: black;
+	background: white; 
+	font-family: Trebuchet MS, Cantarell, sans-serif;
+  width: 1200px;
+  margin: 0;
+  padding: 0;
+}
+
+#bandeau > img { width: 100%; }
+
+h1 {
+    margin: 18px 0px;
+    padding: 10px 5px;
+	font-size: 1.2em;
+	color: white;
+	background: #EC4C4E; 
+	text-align: center;
+}
+
+
+
+
+/* Pour les tables, utiliser les tables bootstrap
+   voir https://getbootstrap.com/docs/4.5/content/tables/
+ */
+
+/* Pour les messages : utiliser les alertes bootstrap
+primary, secondary, success, danger, warning, info
+ <div class="alert alert-success" role="alert">
+  This is a success alert—check it out!
+</div>
+<div class="alert alert-danger" role="alert">
+  This is a danger alert—check it out!
+</div>
+ */
+
+

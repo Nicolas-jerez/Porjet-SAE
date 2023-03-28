@@ -1,0 +1,6 @@
+{
+    "require": {
+        "twig/intl-extra": "^3.5",
+        "symfony/webapp-pack": "^1.1"
+    }
+}

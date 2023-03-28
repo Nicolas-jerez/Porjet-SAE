@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier{% endblock %}
+
+{% block body %}
+    <main class="main">
+        {{ form_start(form) }}
+
+        <div class="info-left">
+            <h1>Informations sur l'équipe</h1>
+            <div class="nom-equipe">
+                {{ form_row(form.libelle) }}
+            </div>
+            <div class="entraineur-equipe">
+                {{ form_row(form.entraineur) }}
+            </div>
+            <div class="commentaire-equipe">
+                {{ form_row(form.commentaire)}}
+            </div>
+            <div class="creneaux-equipes">
+                {{ form_row(form.creneaux) }}
+            </div>
+            <div class="link-equipe-ajouter">
+                {{ form_row(form.url_result_calendrier) }}
+            </div>
+
+        </div>
+        <div class="info-right">
+            <p>Fichier : </p>
+            <div class="cadre-image">
+                <img src="/public/img/Moins11">
+            </div>
+            <input type="file">
+        </div>
+        <div class="ajout-button-panel">
+            {{ form_row(form.supprimer) }}
+            {{ form_end(form) }}
+        </div>
+    </main>
+{% endblock %}

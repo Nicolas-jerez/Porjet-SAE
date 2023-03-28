@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block header %}
+<link rel="stylesheet" href="/../../css/StyleMatch.css">
+{% endblock %}
+
+{% block title %}Ajouter Match{% endblock %}
+
+{% block body %}
+<h1>Créer un Match</h1>
+{{ form_start(form) }}
+{{ form_widget(form) }}
+<section class="mainMatch">
+  <header class="titleInfo">
+  </header>
+  <section id="matchInfo">
+    <article class="teamInfoMatch">
+      <select name="homeTeam" class="teamChoice">
+        <option value="blabla"> blabla</option>
+      </select>
+      <input type="date" id="enterDate">
+      <input type="text" placeholder="Lieu du match" id="placeEnter">
+    </article>
+    <article class="otherInfo">
+      <input type="text" placeholder="Score" id="score"/>
+      <h3 id="versus">VS</h3>
+      <button type="button" id="buttonCreateMatch">{{ button_label|default('Save') }}</button>
+    </article>
+    <article class="teamInfoMatch">
+      <select name="visitingTeam" class="teamChoice">
+        <option value="blabla"> blabla</option>
+      </select>
+      <input type="time" id="timeEnter">
+      <input type="text" placeholder="Catégorie" id="categoryEnter">
+    </article>
+  </section>
+  <footer class="titleInfo">
+  </footer>
+
+</section>
+{{ form_end(form) }}
+{% endblock %}

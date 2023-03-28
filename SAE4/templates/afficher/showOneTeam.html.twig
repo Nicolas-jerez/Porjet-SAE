@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+{% block title %}Equipes{% endblock %}
+
+{% block header %}
+    <link rel="stylesheet" href="/../../css/StyleMatch.css">
+{% endblock %}
+
+{% block body %}
+
+    <main class="main-afficher">
+        <div class="info-equipe-head">
+            <h1>Informations sur l'équipe</h1>
+            <div class="info-equipe-head-content">
+                <label for="">Equipes : </label> <strong>{{  equipe.libelle }}</strong>
+                <br>
+                <label for="">Entraineur : </label> <strong>{{ equipe.entraineur }}</strong>
+                <br>
+                <label for="">Commentaires : </label> <strong>{{ equipe.commentaire }}</strong>
+                <br>
+                <label for="">Creneaux des entrainements : </label> <strong>{{ equipe.creneaux }}</strong>
+            </div>
+        </div>
+        <div class="link-site-equipe">
+            <p>Retrouvez cette equipe sur le site FFHB : <a href="{{ equipe.getUrlResultCalendrier() }}">ici</a></p>
+        </div>
+        <div class="img-equipe">
+            <img src="../../img/{{ equipe.getUrlPhoto }}" alt="">
+        </div>
+
+        <section class="mainPlanning">
+            <header>
+                <h2>Prochains matches</h2>
+            </header>
+            {% for m in match %}
+                <section class="submain">
+                    <article class="teamInfoPlanning">
+                        <img src="../../img/{{ equipe.getUrlPhoto }}" class="logo">
+                        <p class="teamNamePlanning">{{ m.getEquipeLocale }}</p>
+                    </article>
+                    <article class="otherInfo">
+                        <p class="place">Lieu : {{ m.getHote }}</p>
+                        <h3 class="mainInfo hour">{{ m.getDateHeure|date('H:i') }}</h3>
+                        <h4 class="date">{{ m.getDateHeure|date('d/m/Y') }}</h4>
+                        <a href="{{ path('show_oneMatch', {'id_match': m.id}) }}">Accéder au match</a>
+                    </article>
+                    <article class="teamInfoPlanning">
+                        <img src="../../img/exterieur.png" class="logo">
+                        <p class="teamNamePlanning">{{ m.getEquipeAdverse }}</p>
+                    </article>
+                </section>
+            {% endfor %}
+        </section>
+    </main>
+
+
+{% endblock %}

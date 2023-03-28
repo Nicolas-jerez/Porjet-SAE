@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<main class="main-contact">
+    <div class="title-contact">
+        <h1>Contacter le club</h1>
+    </div>
+    <div class="under-title">
+        <p>Besoin d'Informations ? Envie de nous rejoindre ? Prendre tout simplement contact.</p>
+    </div>
+    <div class="content-contact">
+        <div class="name-firstname-contact">
+            <input type="text" id="firstname" placeholder="Prénom">
+            <input type="text" id="name" placeholder="Nom">
+        </div>
+        <div class="email-message-contact">
+
+            <input type="email" placeholder="E-mail" id="email-contact">
+
+        </div>
+        <div class="message-contact">
+            <textarea placeholder="Votre message"></textarea>
+        </div>
+
+        <input type="button" value="Envoyer" id="send-message-btn">
+
+        <hr>
+
+        <div class="data-company">
+            <p>Mail : GGAHB-club@company.com</p>
+            <p>Tel : 01 23 45 67 89</p>
+            <hr id="hr-2">
+            <p>Retrouvez-nous sur Instagram : @GGAHB_club</p>
+        </div>
+
+
+    </div>
+
+
+</main>
+
+{% endblock %}

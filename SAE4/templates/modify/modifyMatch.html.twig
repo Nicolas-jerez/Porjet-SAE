@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier{% endblock %}
+
+{% block body %}
+    <main class="main">
+        {{ form_start(form) }}
+
+        <div class="info-gauche">
+            <h1>Informations sur le match</h1>
+            <div class="nom-equipe">
+                {{ form_row(form.equipe_locale) }}
+            </div>
+            <div>
+                {{ form_row(form.domicile_exterieur) }}
+            </div>
+            <div>
+                {{ form_row(form.equipe_adverse)}}
+            </div>
+            <div>
+                {{ form_row(form.hote) }}
+            </div>
+            <div>
+                {{ form_row(form.date_heure) }}
+            </div>
+            <div>
+                {{ form_row(form.num_semaine) }}
+            </div>
+            <div>
+                {{ form_row(form.num_journee) }}
+            </div>
+            <div>
+                {{ form_row(form.gymnase) }}
+            </div>
+            <div>
+                {{ form_row(form.score) }}
+            </div>
+
+        </div>
+        <div class="info-droite">
+            <p>Fichier : </p>
+            <div class="cadre-image">
+                <input type="file">
+            </div>
+        </div>
+
+        {{ form_row(form.modifier) }}
+        {{ form_row(form.supprimer) }}
+        {{ form_end(form) }}
+    </main>
+{% endblock %}

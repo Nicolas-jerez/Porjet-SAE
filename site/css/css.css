@@ -1,0 +1,89 @@
+
+div.tiers {
+    width: 33%;
+    float: left;
+}
+
+div.tiers > h2 {
+    text-align: left;
+}
+
+/* La table des horaires d'entraînement */
+table.horaires { border: none; }
+table.horaires td { border: none; padding: 5px 10px; vertical-align: top; }
+table.horaires th { text-align: left; padding: 5px 10px; vertical-align: top; }
+
+table.classementEquipe { border-collapse: collapse; margin: 5px auto; }
+table.classementEquipe td, table.classementEquipe th { border: thin solid #CCCCCC; padding: 2px 3px; text-align: center; }
+table.classementEquipe td.nomEquipe { text-align: left; }
+table.classementEquipe tr.notreEquipe { font-weight: bold; background-color: #77BF77; }
+
+p.domicile {
+   font-size: 1.3em; margin: 5px 5px 5px 20px; padding: 5px 5px;
+   background-color:#38C315;
+}
+p.exterieur {
+    font-size: 1.3em; margin: 5px 5px 5px 20px; padding: 5px 5px;
+    background-color:#A3F98E;
+}
+
+.match
+{
+	text-align: left;
+	margin-top: 5%;
+	padding:2%;
+}
+
+h2 { text-align:center; color: #0088CC; }
+h3.centrouge { text-align:center; color: red; }
+p.lettreinfo { padding-left: 8em; font-size: 1.2em; }
+
+.equipe
+{
+	text-align: left;
+	margin-top: 5%;
+	padding:2%;
+}
+
+#imageEquipe { width: 600px; }
+
+#ligneFile
+{
+	text-align:left;
+}
+
+img
+{
+	display : block;
+	margin: 0 auto;
+}
+
+#tablePlanning tr, #tablePlanning td, #tablePlanning th
+{
+	border-style:solid;
+	border-color:black;
+	border-width:2px;
+}
+
+#tablePlanning td.sansMatch
+{
+	background-color:#CCCCCC;
+}
+
+#tablePlanning td.avecMatchDom
+{
+	background-color:#38C315;
+}
+
+#tablePlanning td.avecMatchExt
+{
+	background-color:#A3F98E;
+}
+
+#tablePlanning td.avecMatchDom input.monInput
+{
+	margin-right:5%;
+	margin-left:5%;
+	width:70%;
+}
+

@@ -1,0 +1,81 @@
+{% extends 'base.html.twig' %}
+{% block title %}Equipes{% endblock %}
+
+{% block body %}
+    <div class="page">
+        <div class="content">
+            <div class="wrapper">
+                <img src="/../../img/Moins9.jpg">
+                <img src="/../../img/Moins11.jpg">
+                <img src="/../../img/Moins11.jpg">
+                <img src="/../../img/Moins13.jpg">
+                <img src="/../../img/Moins15.jpg">
+                <img src="/../../img/Moins17.jpg">
+                <img src="/../../img/Moins18.jpg">
+                <img src="/../../img/SF1.jpg">
+                <img src="/../../img/SF2.jpg">
+            </div>
+        </div>
+
+        <div class="content-2">
+            <div class="prochain-match-gauche">
+                <table>
+                    <thead>
+                    <th colspan="3">Matches joués</th>
+                    </thead>
+                    <tbody>
+                    {% for m in matches_joues %}
+                        <tr class="first-match">
+                            <td>{{ m.equipe_locale }}</td>
+                            <td>{{ m.date_heure|date('d/m/Y') ~' '~ m.score}}</td>
+                            <td>{{ m.equipe_adverse }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="precedent-match-droite">
+                <table>
+                    <thead>
+                    <th colspan="3">Matches à venir</th>
+                    </thead>
+                    <tbody>
+                    {% for m in matches_a_venir %}
+                        <tr class="first-match">
+                            <td>{{ m.equipe_locale }}</td>
+                            <td>{{ m.date_heure|date('d/m/Y') ~' '~m.date_heure|date('H:i')}}</td>
+                            <td>{{ m.equipe_adverse }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="content-btn">
+            <a href="{{ path('show_planning') }}"><input type="button" value="Voir le Planning"></a>
+            {% if app.user %}
+                <a href="{{ path('add_match') }}"><input type="button" value="Création matches"></a>
+            {% endif %}
+        </div>
+        <div class="info-btn">
+            <br>
+            <hr class="separation">
+
+            <h1>A PROPOS</h1>
+            <div class="a-propos">
+                <div class="histoire">
+                    <h2>Histoire</h2>
+                    <p>Fondée en 1968 par une poignée de passionnés, la section Handball de l’Amicale Laïque Guilherand-Granges occupe une place privilégiée dans le paysage du Handball régional. Club formateur par excellence</p>
+                </div>
+                <div class="equipes">
+                    <h2>Les équipes</h2>
+                    <p>Avec plus de 180 adhérents, le Guilherand-Granges Ardèche Handball (GGAHB) privilégie la formation des jeunes depuis le minihand (école de hand labellisée) jusqu’aux moins de 18 ans.</p>
+                </div>
+                <div class="club">
+                    <h2>Le club</h2>
+                    <p>Le bureau du club est composé de 13 bénévoles et d’un salarié. Le club est présidé depuis 2018 par Émilien Dorne. Vous trouverez ci-dessous l’organigramme administratif et l’organigramme sportif.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

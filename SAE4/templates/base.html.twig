@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/../../css/Style.css">
+    {% block stylesheets %}{% endblock %}
+    <title>Homepage</title>
+    {% block header %}{% endblock %}
+</head>
+<body>
+<header class="navbar">
+    <div class="nav-gauche">
+        <img src="https://www.gga-handball.fr/wp-content/uploads/2022/04/cropped-cropped-AD15DC10-4982-443D-8014-D84E4673B8B1.png" >
+    </div>
+    <div class="nav-droite">
+        <ul>
+            <a href="{{ path('app_init') }}"><li>Acceuil</li></a>
+            <a href="{{ path('show_TeamList') }}"><li>Equipes</li></a>
+            <a href="{{ path('show_MatchList') }}"><li>Matches</li></a>
+            <a href="{{ path('show_planning') }}"><li>Planning</li></a>
+            {% if app.user %}
+                <a href="{{ path('inscription') }}"><li>Inscription</li></a>
+            {% else %}
+                <a href="{{ path('show_contact') }}"><li>Contact</li></a>
+            {% endif %}
+            {% if app.user %}
+                <div class="logout-home">
+                <a href="{{ path('deconnexion') }}"><li><i>Déconnexion</i></li></a>
+                    <p>{{ app.user.login }}</p>
+                </div>
+            {% else%}
+                        <a href="{{ path('connexion') }}"><i class="bi-box-arrow-right" style="color: green; font-size: 1.3rem; vertical-align: middle;">Connexion</i></a>
+
+            {% endif %}
+        </ul>
+    </div>
+    <div class="icone-nav">
+        <i class="gg-menu-right"></i>
+    </div>
+    <script>
+        const menuHamburger = document.querySelector(".icone-nav")
+        const navdroite = document.querySelector(".nav-droite")
+
+
+        menuHamburger.onclick = function () {
+            navdroite.classList.toggle('mobile-menu')
+
+        }
+    </script>
+</header>
+{% block body %}{% endblock %}
+<footer>
+    <div class="contact-footer">
+        <ul>
+            <h1>Contact</h1>
+            <a href="{{ path('show_contact') }}"><li>Tel</li></a>
+            <a href="{{ path('show_contact') }}"><li>Mail</li></a>
+            <a href="{{ path('show_contact') }}"><li>Instagram</li></a>
+            <a href="{{ path('show_contact') }}"><li>Contactez-nous</li></a>
+        </ul>
+    </div>
+
+</footer>
+{% block javascripts %}{% endblock %}
+</body>
+</html>

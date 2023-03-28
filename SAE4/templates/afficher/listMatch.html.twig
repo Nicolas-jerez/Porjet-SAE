@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+{% block title %}Equipes{% endblock %}
+
+{% block body %}
+<div class="content-liste-équipes">
+
+<div class ="row justify-content-md-center">
+    <div class="col-6">
+        <h1>Les Matches</h1>
+    </div>
+</div>
+
+<div class ="row justify-content-md-center">
+    <div class="col-6">
+        <table>
+            <thead>
+            <tr>
+            <th>
+                Equipe Local
+            </th>
+                <th>
+                    Equipe adverse
+                </th>
+                <th>
+                    hôte
+                </th>
+                <th>
+                    gymnase
+                </th>
+                <th>
+                    Date et horaires
+                </th>
+                {% if app.user %}
+                <th>
+                    <a href="{{ path('add_match') }}">Ajouter</a>
+                </th>
+                {% endif %}
+
+
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for m in match %}
+            <tr>
+                <td>{{ m.getEquipeLocale }}</td>
+                <td>{{ m.getEquipeAdverse }}</td>
+                <td>{{ m.getHote }}</td>
+                <td>{{ m.getGymnase }}</td>
+                <td>{{ m.getDateHeure|date('d/m/Y') ~' '~m.getDateHeure|date('H:i') }}</td>
+                <td>
+                    <a href="{{ path('show_oneMatch', {'id_match': m.id}) }}">Afficher</a>
+                </td>
+                {% if app.user %}
+                <td>
+                    <a href="{{ path('modify_match', {'id': m.id })}}">Modifier</a>
+                </td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+    </div>
+{% endblock %}
